@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1 class="main-header">Films</h1>
+      <h1 class="main-header">MY FAVE FILM</h1>
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -34,9 +34,9 @@
             <div class="new-cast-member">
               <div class="form-group">
                 <label for="new-actor">Actor</label>
-                <input type="text" class="form-control new-actor" required="true">
+                <input type="text" class="form-control new-actor">
                 <label for="new-charcter">Character</label>
-                <input type="text" class="form-control new-character" required="true">
+                <input type="text" class="form-control new-character">
               </div>
             </div>
           </div>
@@ -46,9 +46,11 @@
           <button type="submit" class="btn btn-lg btn-success">Add film</button>
         </form>
 
+      <div class="film-list">
         <h3>My Films:</h3>
         <ul id="films">
         </ul>
+      </div>
       </div>
 
       <div class="col-md-6">

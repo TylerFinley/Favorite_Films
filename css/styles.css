@@ -10,3 +10,11 @@
 .film:hover {
   test-decoration: underline;
 }
+
+.main-header {
+  text-align: center;
+}
+
+.film-list {
+  display: none;
+}

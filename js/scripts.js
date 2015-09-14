@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("#add-cast-member").click(function() {
-    $(".new-cast-member").append('<div class="new-character">' +
+    $(".new-cast-member").append('<div class="new-cast-member">' +
                                   '<div class="form-group">' +
                                     '<label for="new-actor">Actor</label>' +
                                     '<input type="text" class="form-control new-actor">' +
@@ -18,17 +18,25 @@ $(document).ready(function() {
     var inputtedYear = $("input#new-year").val();
     var inputtedDirector = $("input#new-director").val();
 
-    var newFilm = { filmTitle: inputtedTitle, genre: inputtedGenre, year: inputtedYear, director: inputtedDirector, cast: [] };
+    var newFilm = { filmTitle: inputtedTitle,
+                    genre: inputtedGenre,
+                    year: inputtedYear,
+                    director: inputtedDirector,
+                    cast: [] };
 
     $(".new-cast-member").each(function() {
-      var inputtedActor = $(this).find("input.new-actor");
-      var inputtedCharacter = $(this).find("input.new-character");
+      var inputtedActor = $(this).find("input.new-actor").val();
+      var inputtedCharacter = $(this).find("input.new-character").val();
 
-      var newCastMember = { actor: inputtedActor, character: inputtedCharacter };
+      var newCastMember = { actor: inputtedActor,
+                            character: inputtedCharacter };
       newFilm.cast.push(newCastMember);
     });
 
+
     $("ul#films").append("<li><span class='film'>" + newFilm.filmTitle + "</span></li>");
+
+    $(".film-list").fadeIn();
 
     $(".film").last().click(function() {
       $("#show-film").show();
@@ -43,6 +51,7 @@ $(document).ready(function() {
         $("ul#cast").append("<li>" + castMember.actor + ": " + castMember.character + "</li>");
       });
     });
+
 
     $("input#new-title").val("");
     $("input#new-genre").val("");
